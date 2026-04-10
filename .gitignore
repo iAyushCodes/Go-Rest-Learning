@@ -58,5 +58,6 @@ tsconfig.tsbuildinfo
 .vscode
 
 storage
+/config
 
 go-rest
