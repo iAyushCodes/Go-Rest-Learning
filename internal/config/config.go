@@ -9,7 +9,7 @@ import (
 )
 
 type HTTPServer struct {
-	Address string
+	Addr string `yaml:"address" env-required:"true"`
 }
 
 type Config struct {
@@ -38,7 +38,7 @@ func MustLoad() *Config {
 		log.Fatalf("Config file does not exist: %s", configPath)
 	}
 
-	var cfg Config
+	var cfg Config // empty as of now
 
 	err := cleanenv.ReadConfig(configPath, &cfg) // goes to config file and fills the cfg variables with the variables of config file
 	if err != nil {
